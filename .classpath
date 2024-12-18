@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-21">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="/Users/hakandugum/Downloads/neuroph-2.92/neuroph-adapters-2.92.jar"/>
+	<classpathentry kind="lib" path="/Users/hakandugum/Downloads/neuroph-2.92/neuroph-contrib-2.92.jar"/>
+	<classpathentry kind="lib" path="/Users/hakandugum/Downloads/neuroph-2.92/neuroph-core-2.92.jar"/>
+	<classpathentry kind="lib" path="/Users/hakandugum/Downloads/neuroph-2.92/neuroph-imgrec-2.92.jar"/>
+	<classpathentry kind="lib" path="/Users/hakandugum/Downloads/neuroph-2.92/neuroph-ocr-2.92.jar"/>
+	<classpathentry kind="lib" path="/Users/hakandugum/Downloads/neuroph-2.92/neuroph-samples-2.92.jar"/>
+	<classpathentry kind="lib" path="/Users/hakandugum/Downloads/neuroph-2.92/libs/logback-classic-1.0.13.jar"/>
+	<classpathentry kind="lib" path="/Users/hakandugum/Downloads/neuroph-2.92/libs/logback-core-1.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/hakandugum/Downloads/neuroph-2.92/libs/slf4j-api-1.7.5.jar"/>
+	<classpathentry kind="lib" path="/Users/hakandugum/Downloads/jFuzzyLogic.jar"/>
+	<classpathentry kind="lib" path="/Users/hakandugum/Downloads/jfreechart-1.5.2/src/main/java/org/jfree/chart"/>
+	<classpathentry kind="lib" path="/Users/hakandugum/Downloads/jfreechart-1.5.2/src/main/java/org/jfree/data"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
