@@ -28,8 +28,8 @@ public class MainMenu {
 
     public static void main(String[] args) {
         // Load train and test datasets
-        DataSet trainData = DataLoader.loadDataSet("src/train.csv");
-        DataSet testData = DataLoader.loadDataSet("src/test.csv");
+        DataSet trainData = DataLoader.loadDataSet("train.csv");
+        DataSet testData = DataLoader.loadDataSet("test.csv");
 
         // Run the topology experiment at startup
         runTopologyExperiments(trainData, testData);
@@ -92,7 +92,7 @@ public class MainMenu {
 
             // Train with momentum
             NeuralNetwork<?> netMomentum = createNetwork(topology, 3, 1);
-            List<Double> trainLossMomentum = trainNetworkWithLossTracking(netMomentum, trainData, 10, 0.1, 0.9);
+            List<Double> trainLossMomentum = trainNetworkWithLossTracking(netMomentum, trainData, 100, 0.1, 0.9);
             double testMseMomentum = MseCalculator.testNetwork(netMomentum, testData);
 
             // Add final test MSE to the final loss graph
@@ -112,7 +112,7 @@ public class MainMenu {
 
             // Train without momentum
             NeuralNetwork<?> netNoMomentum = createNetwork(topology, 3, 1);
-            List<Double> trainLossNoMomentum = trainNetworkWithLossTracking(netNoMomentum, trainData, 10, 0.1, 0.0);
+            List<Double> trainLossNoMomentum = trainNetworkWithLossTracking(netNoMomentum, trainData, 100, 0.1, 0.0);
             double testMseNoMomentum = MseCalculator.testNetwork(netNoMomentum, testData);
 
             // Add final test MSE to the final loss graph
@@ -135,9 +135,6 @@ public class MainMenu {
         plotFinalLossGraph(momentumFinalLossSeries, noMomentumFinalLossSeries);
         plotEpochLossGraphs(momentumEpochLossDataset, "Epoch-by-Epoch Loss (With Momentum)");
         plotEpochLossGraphs(noMomentumEpochLossDataset, "Epoch-by-Epoch Loss (Without Momentum)");
-
-        System.out.println("Best Topology With Momentum: " + topologyToString(bestMomentumTopology) + " MSE: " + bestMomentumMse);
-        System.out.println("Best Topology Without Momentum: " + topologyToString(bestNoMomentumTopology) + " MSE: " + bestNoMomentumMse);
     }
     
     private static void plotFinalLossGraph(XYSeries momentumSeries, XYSeries noMomentumSeries) {
@@ -190,7 +187,7 @@ public class MainMenu {
 	     mbp.setMomentum(momentum);
 	     mbp.setMaxIterations(epochs);
 	
-	  // Perform one full initialization step to ensure weightTrainingData is initialized
+	     // Perform one full initialization step to ensure weightTrainingData is initialized
 	     mbp.setMaxIterations(1);
 	     network.learn(trainData); // This initializes internal structures
 	     
